@@ -1,0 +1,52 @@
+.item{
+    position: relative;
+    padding: 10px
+
+}
+.caption{
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    padding: 10px;
+    width: 90%;
+    background-color: white;
+
+}
+#lightBoxContainer{
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+}
+#lightbox{
+    width: 60%;
+    height: 75%;
+    background-image: url(../images/portfolio-1.jpg);
+    background-size: 100% 100%;
+    margin: 8em auto;
+    position: relative;
+}
+#close{
+    position: absolute;
+    right: 3%;
+    top: 3%
+}
+#next{
+    position: absolute;
+    right: 5%;
+    top: 50%
+}
+#prev{
+    position: absolute;
+    left: 5%;
+    top: 50%
+}
+.item-img , #next , #prev , #close{
+    cursor: pointer;
+}
+.show {
+    display: block
+}
