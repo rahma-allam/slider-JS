@@ -1,46 +1,38 @@
 //select all imgs
-var img =document.querySelectorAll(".item-img") ;
-
+let img = document.querySelectorAll(".item-img");
 // select icon of event
-var close = document.getElementById("close");
-var next = document.getElementById("next");
-var prev = document.getElementById("prev");
+let close = document.getElementById("close");
+let next = document.getElementById("next");
+let prev = document.getElementById("prev");
 //show page var
-var lightBoxContainer = document.getElementById("lightBoxContainer")
-var lightBox =  document.getElementById("lightbox")
+let lightBoxContainer = document.getElementById("lightBoxContainer")
+let lightBox =  document.getElementById("lightbox")
 // extra variables to hold data
-var currentIndex 
-var imageArray  = []
+let currentIndex 
+let imageArray  = []
 
 //click
-
-for(var i=0 ;i<img.length;i++)
-    {
-        
+for(let i=0 ;i<img.length;i++){
         imageArray.push(img[i])
-        
-        
        // Event El click
             img[i].addEventListener("click",function(ev){                
                currentIndex= imageArray.indexOf(ev.target)
-                var imagPath = ev.target.src;
+                let imagPath = ev.target.src;
                 lightBox.style.backgroundImage="url("+imagPath+")"
                 lightBoxContainer.style.display = "block"
-
             })
     }
 // next arrow
     next.addEventListener("click",function(){
 
         currentIndex=   ++currentIndex;
-        console.log(currentIndex)
         
         if(currentIndex >= img.length)
             {
                 currentIndex=0;
             }
         
-        var x= img[currentIndex].src
+        let x= img[currentIndex].src
         lightBox.style.backgroundImage= "url('"+x+"')"
         
         
@@ -57,7 +49,7 @@ for(var i=0 ;i<img.length;i++)
                 currentIndex=  img.length-1  ;
             }
         
-        var x= img[currentIndex].src
+        let x= img[currentIndex].src
         lightBox.style.backgroundImage= "url('"+x+"')"
         
         
@@ -83,7 +75,7 @@ document.addEventListener("keydown",function(ev){
                     currentIndex=0;
                 }
 
-            var x= img[currentIndex].src
+            let x= img[currentIndex].src
             lightBox.style.backgroundImage= "url('"+x+"')"
     
         }
@@ -99,7 +91,7 @@ document.addEventListener("keydown",function(ev){
                     currentIndex=  img.length-1  ;
                 }
 
-            var x= img[currentIndex].src
+            let x= img[currentIndex].src
             lightBox.style.backgroundImage= "url('"+x+"')"
         }
     // esc key
